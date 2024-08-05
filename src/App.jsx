@@ -1,4 +1,4 @@
-import { useRef, useEffect,useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import NavBar from "./component Chunks/navBar";
 import Hero from "./component Chunks/hero";
 import Footer from "./component Chunks/footer";
@@ -9,18 +9,27 @@ import "./component Chunks/locomotive.css";
 import Services from "./component Chunks/services";
 import ContactForm from "./component Chunks/contactForm";
 import About from "./component Chunks/about";
-import LocomotiveScroll from "locomotive-scroll"; 
-import "./component Chunks/locomotive.css";
-import imagesLoaded from "imagesloaded";
 
 function App() {
   const navRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoading(true);
+    };
+    window.addEventListener("load", handleLoad);
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
   return (
     <>
-      <div >
+      <div>
         <NavBar navRef={navRef} />
         <Hero navRef={navRef} />
-        <MarqueeImg  />
+        <MarqueeImg />
         <About />
         <Services />
         <Protecting />
