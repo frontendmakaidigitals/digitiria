@@ -12,18 +12,75 @@ const Hero = ({ navRef }) => {
       containerRef.current.style.height = `calc(100vh - ${navHeight}px)`;
     }
   }, [navRef]);
+
   return (
     <div
       className={`w-full relative bg-[#D5DDCC]  flex items-start justify-center`}
       ref={containerRef}
     >
-      <div className="absolute -left-10 -top-6">
-        <img src="arrowRibben.svg" className="scale-x-[-1] rotate-[245deg]" />
+      <div className="absolute -left-16 top-6">
+        <svg
+          width="239"
+          height="118"
+          viewBox="0 0 239 118"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <motion.path
+            d="M3.94519 50.8348C3.76554 23.427 44.3473 -17.144 79.2435 17.8059C110.15 48.7603 85.9648 87.1768 75.4172 85.2401C64.8696 83.3033 53.4694 28.7222 98.3003 10.7367C123.397 0.668255 141.262 14.4019 150.488 24.9201C173.709 48.3203 164.931 102.236 147.073 106.249C130.54 109.965 124.498 50.4373 168.611 45.0762C194.476 41.9327 214.94 61.1751 221.609 87.2045"
+            stroke="#024D4D"
+            stroke-width="10"
+            stroke-linecap="round"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2 }}
+          />
+        </svg>
+
+        <div className="absolute bottom-6 right-3">
+          <svg
+            width="42"
+            height="29"
+            viewBox="0 0 42 29"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <motion.path
+              d="M3.28553 3.84279L38.4824 25.797"
+              stroke="#024D4D"
+              stroke-width="6"
+              stroke-linecap="round"
+              transition={{ duration: .5, delay:2 }}
+              initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            />
+          </svg>
+        </div>
+
+        <div className="absolute bottom-6 right-2">
+          <svg
+            width="11"
+            height="49"
+            viewBox="0 0 11 49"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <motion.path
+              d="M7.45808 3.01839L3.57926 45.2913"
+              stroke="#024D4D"
+              stroke-width="6"
+              stroke-linecap="round"
+              transition={{ duration: .5, delay:2 }}
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+            />
+          </svg>
+        </div>
       </div>
       <motion.div
         animate={{ scale: [0, 1], rotate: [90, 0] }}
         transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
-        className="absolute   "
+        className="absolute"
       >
         <img src={"services.svg"} />
         <div className="absolute -bottom-3 -right-3 ">
@@ -67,7 +124,11 @@ const Hero = ({ navRef }) => {
               </motion.p>
             </div>
           </div>
-          <div className="">
+          <motion.div
+            animate={{ opacity: [0, 1] }}
+            transition={{ delay: 0.8 }}
+            className=""
+          >
             <svg
               width="827"
               height="343"
@@ -162,7 +223,7 @@ const Hero = ({ navRef }) => {
                 </filter>
               </defs>
             </svg>
-          </div>
+          </motion.div>
         </div>
 
         <HeroForm />
