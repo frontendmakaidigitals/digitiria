@@ -20,7 +20,11 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        'iphone': "350px",
+        'android': "400px",
+        "ipad-tablet": "750px",
+        'desktop': "1336px",
+        'bigDevice': "1400px",
       },
     },
     extend: {
