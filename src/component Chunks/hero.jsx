@@ -31,8 +31,8 @@ const Hero = ({ navRef }) => {
             stroke="#024D4D"
             stroke-width="10"
             stroke-linecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 2 }}
           />
         </svg>
@@ -50,9 +50,9 @@ const Hero = ({ navRef }) => {
               stroke="#024D4D"
               stroke-width="6"
               stroke-linecap="round"
-              transition={{ duration: .5, delay:2 }}
-              initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
+              transition={{ duration: 0.3, delay: 2 }}
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
             />
           </svg>
         </div>
@@ -70,9 +70,9 @@ const Hero = ({ navRef }) => {
               stroke="#024D4D"
               stroke-width="6"
               stroke-linecap="round"
-              transition={{ duration: .5, delay:2 }}
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
+              transition={{ duration: 0.3, delay: 2 }}
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
             />
           </svg>
         </div>
